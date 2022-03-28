@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
-
 * {
     font-family: 'Mulish', sans-serif;
     color: #FFFFFF;
@@ -77,4 +75,9 @@ body {
 .privacy-policy-content {
     position: relative;
     padding: 25px 30px;
+}
+
+.block {
+    display: block;
+    width: 500px;
 }

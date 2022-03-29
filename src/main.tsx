@@ -10,9 +10,8 @@ ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={ <App /> } />
+                <Route index element={ <App /> } />
                 <Route path='/privacy' element={ <Privacy /> } />
-
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

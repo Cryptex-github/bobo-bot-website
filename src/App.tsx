@@ -9,7 +9,7 @@ export default function App() {
         <>
             <Header />
             <div className="center bold">
-                <Typed strings={['Bobo Bot, The Anime Bot but better.', 'Did I mention but better?', 'Yes I did.']} typeSpeed={40} backSpeed={50} />
+                <Typed strings={['Bobo Bot, The Anime Bot but better.', 'Did I mention but better?', 'Yes I did.', 'Bobo Bot, The Anime Bot but better.']} typeSpeed={40} backSpeed={60} />
             </div>
 
             <Footer />

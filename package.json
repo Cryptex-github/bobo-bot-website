@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build_no_tsc": "vite build"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",

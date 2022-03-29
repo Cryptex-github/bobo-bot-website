@@ -11,8 +11,8 @@ ReactDOM.render(
         <BrowserRouter>
             <Routes>
                 <Route path='/'>
-                    <Route index element={ <App /> } />
                     <Route path='privacy' element={ <Privacy /> } />
+                    <Route index element={ <App /> } />
                 </Route>
             </Routes>
         </BrowserRouter>

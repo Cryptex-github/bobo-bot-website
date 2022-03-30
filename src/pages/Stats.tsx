@@ -4,11 +4,16 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 type StatsData = {
-    channels: number,
-    commands: number,
-    guilds: number,
-    total_command_uses: number,
-    users: number
+    Servers: number,
+    Users: number,
+    Channels: number,
+    Commands: number,
+    'Total Command Uses': number,
+    'Most Used Command': string,
+    'Postgres Latency': number,
+    'Redis Latency': number,
+    'Discord REST Latency': number,
+    'Discord WebSocket Latency': number,
 }
 
 interface StatsArray {

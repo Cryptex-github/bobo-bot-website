@@ -80,7 +80,13 @@ body {
     display: flex;
     margin-top: 50px;
     justify-content: center;
+    flex-wrap: wrap;
 }
+
+@media (max-width: 800px) {
+    .stats {
+        flex-direction: column;
+    }
 
 .box {
     background-color: #2C394B;

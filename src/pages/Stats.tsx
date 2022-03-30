@@ -10,10 +10,10 @@ type StatsData = {
     Commands: number,
     'Total Command Uses': number,
     'Most Used Command': string,
-    'Postgres Latency': number,
-    'Redis Latency': number,
-    'Discord REST Latency': number,
-    'Discord WebSocket Latency': number,
+    'Postgres Latency': string,
+    'Redis Latency': string,
+    'Discord REST Latency': string,
+    'Discord WebSocket Latency': string,
 }
 
 interface StatsArray {

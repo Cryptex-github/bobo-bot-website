@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect, FC, ReactElement } from 'react'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -42,12 +42,12 @@ export default function Stats() {
         fetchData();
     }, []);
 
-    function renderStats() {
+    function renderStats(): ReactElement | Array<ReactElement> {
         if (!stats) {
             return <span>N/A</span>;
         }
 
-        const arr = [];
+        const arr: Array<ReactElement> = [];
 
         for (const item of stats) {
             arr.push(

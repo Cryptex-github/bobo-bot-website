@@ -4,7 +4,11 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 type StatsData = {
-    total_command_uses: number
+    channels: number,
+    commands: number,
+    guilds: number,
+    total_command_uses: number,
+    users: number
 }
 
 export default function Stats() {
@@ -30,6 +34,42 @@ export default function Stats() {
             <Header />
 
             <div className='stats'>
+                <div className='box'>
+                    <span className='stat-title'>Channels</span>
+                    <br />
+                    <br />
+                    <span className='stat-value'>{
+                        stats ? stats.channels : 'N/A'
+                    }</span>
+                </div>
+
+                <div className='box'>
+                    <span className='stat-title'>Commands</span>
+                    <br />
+                    <br />
+                    <span className='stat-value'>{
+                        stats ? stats.commands : 'N/A'
+                    }</span>
+                </div>
+
+                <div className='box'>
+                    <span className='stat-title'>Guilds</span>
+                    <br />
+                    <br />
+                    <span className='stat-value'>{
+                        stats ? stats.guilds : 'N/A'
+                    }</span>
+                </div>
+
+                <div className='box'>
+                    <span className='stat-title'>Users</span>
+                    <br />
+                    <br />
+                    <span className='stat-value'>{
+                        stats ? stats.users : 'N/A'
+                    }</span>
+                </div>
+
                 <div className='box'>
                     <span className='stat-title'>Total Command Uses</span>
                     <br />

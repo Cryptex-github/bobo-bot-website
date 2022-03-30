@@ -7,6 +7,12 @@ export default function Header() {
                     <h1 className="title">Bobo Bot</h1>
                 </div>
             </a>
+
+            <div className='menu-items'>
+                <a className='no-deco' href='stats'>
+                    <span className='hover-underline-animation'>Statistics</span>
+                </a>
+            </div>
         </div>
     )
 }

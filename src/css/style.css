@@ -41,6 +41,7 @@ body {
 
 .title-bar {
     background-color: #030618;
+    display: flex;
 }
 
 .footer {
@@ -73,4 +74,116 @@ body {
 .block {
     display: block;
     width: 500px;
+}
+
+.stats {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.box {
+    background-color: #2C394B;
+    border-radius: 8px;
+    margin: 12px;
+    width: 250px;
+    text-align: center;
+}
+
+.stat-title {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.stat-value {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.button {
+    border-radius: 8px;
+    display: inline-block;
+    transition: all, 0.5s;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0
+}
+
+.invite-button {
+    background-color: #7289DA;
+    padding: 20px;
+    width: 200px;
+    margin-top: 3vw;
+}
+
+.support-server-button {
+    background-color: #2C394B;
+    padding: 20px;
+    width: 200px;
+    margin-top: 3vw;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 50vw;
+    padding-top: 3.3vw;
+    padding-bottom: 8px;
+    font-size: 23px;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #FFFFFF;
+  }
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }

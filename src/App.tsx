@@ -17,7 +17,7 @@ export default function App() {
                     <button className='button invite-button'><span>Invite Bobo Bot</span></button>
                 </a>
 
-                <a className='no-deco' href="https://discord.com/api/oauth2/authorize?client_id=808485782067216434&permissions=448827607232&scope=bot%20applications.commands">
+                <a className='no-deco' href="https://discord.gg/AHYTRPr8hZ">
                     <button className='button support-server-button'><span>Support Server</span></button>
                 </a>
             </div>

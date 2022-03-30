@@ -11,8 +11,13 @@ type StatsData = {
     users: number
 }
 
+interface StatsArray {
+    label: string,
+    value: number
+}
+
 export default function Stats() {
-    const [stats, setStats] = useState<StatsData | null>();
+    const [stats, setStats] = useState<Array<StatsArray> | null>();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,61 +28,49 @@ export default function Stats() {
                 return;
             }
 
-            setStats(await resp.json());
+            const stats_json = await resp.json();
+            
+            const arr: Array<StatsArray> = [];
+
+            Object.keys(stats_json).forEach((key) => {
+                arr.push({'label': key, 'value': stats_json[key]});
+            });
+
+            setStats(arr);
         };
 
         fetchData();
     }, []);
+
+    function renderStats() {
+        if (!stats) {
+            return <span>N/A</span>;
+        }
+
+        const arr = [];
+
+        for (const item of stats) {
+            arr.push(
+                <div className='box'>
+                    <span className='stat-title'>{item.label}</span>
+                    <br />
+                    <br />
+                    <span className='stat-value'>{item.value}</span>
+                </div> 
+            );
+
+        }
+
+        return arr;
+
+    }
 
     return (
         <>
             <Header />
 
             <div className='stats'>
-                <div className='box'>
-                    <span className='stat-title'>Channels</span>
-                    <br />
-                    <br />
-                    <span className='stat-value'>{
-                        stats ? stats.channels : 'N/A'
-                    }</span>
-                </div>
-
-                <div className='box'>
-                    <span className='stat-title'>Commands</span>
-                    <br />
-                    <br />
-                    <span className='stat-value'>{
-                        stats ? stats.commands : 'N/A'
-                    }</span>
-                </div>
-
-                <div className='box'>
-                    <span className='stat-title'>Guilds</span>
-                    <br />
-                    <br />
-                    <span className='stat-value'>{
-                        stats ? stats.guilds : 'N/A'
-                    }</span>
-                </div>
-
-                <div className='box'>
-                    <span className='stat-title'>Users</span>
-                    <br />
-                    <br />
-                    <span className='stat-value'>{
-                        stats ? stats.users : 'N/A'
-                    }</span>
-                </div>
-
-                <div className='box'>
-                    <span className='stat-title'>Total Command Uses</span>
-                    <br />
-                    <br />
-                    <span className='stat-value'>{
-                        stats ? stats.total_command_uses : 'N/A'
-                    }</span>
-                </div>
+                {renderStats()}
             </div>
 
             <Footer />

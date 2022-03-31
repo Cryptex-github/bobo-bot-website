@@ -8,9 +8,15 @@ export default function Header() {
                 </div>
             </a>
 
-            <div className='menu-items'>
+            <div className='menu-stats'>
                 <a className='no-deco' href='stats'>
                     <span className='hover-underline-animation'>Statistics</span>
+                </a>
+            </div>
+
+            <div className='menu-roo'>
+                <a className='no-deco' href='roo'>
+                    <span className='hover-underline-animation'>Roo</span>
                 </a>
             </div>
         </div>

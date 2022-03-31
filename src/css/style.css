@@ -169,10 +169,19 @@ body {
     justify-content: center;
 }
 
-.menu-items {
+.menu-stats {
     display: flex;
     justify-content: flex-end;
     padding-left: 50vw;
+    padding-top: 3.3vw;
+    padding-bottom: 8px;
+    font-size: 23px;
+}
+
+.menu-roo {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 1vw;
     padding-top: 3.3vw;
     padding-bottom: 8px;
     font-size: 23px;
@@ -200,4 +209,14 @@ body {
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.roos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vw;
+}
+
+.roo {
+    margin: 3px;
 }

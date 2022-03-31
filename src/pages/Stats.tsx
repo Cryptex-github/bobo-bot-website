@@ -14,6 +14,8 @@ type StatsData = {
     'Redis Latency': string,
     'Discord REST Latency': string,
     'Discord WebSocket Latency': string,
+    'Total Gateway Events': number,
+    'Average Events per minute': number
 }
 
 interface StatsArray {

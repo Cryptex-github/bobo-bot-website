@@ -34,8 +34,8 @@ export default function Roo() {
                     roos ? 
                         roos.map(roo => (
                             <div className='roo'>
-                                <a href={'https://cdn.bobobot.cf/uploads/' + roo}>
-                                    <img className='roo' src={'https://cdn.bobobot.cf/uploads/' + roo} alt={roo.toString()} />
+                                <a href={'https://cdn.bobobot.cf/uploads/roos/' + roo}>
+                                    <img className='roo' src={'https://cdn.bobobot.cf/uploads/roos/' + roo} alt={roo.toString()} />
                                 </a>
                             </div>
                         ))

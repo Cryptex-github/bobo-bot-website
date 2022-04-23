@@ -1,11 +1,36 @@
+import styled from 'styled-components';
+
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+
+
+const Content = styled.div`
+    position: relative;
+    padding: 25px 30px;
+`
+
+const ContentItem = styled.div`
+    border-bottom: 1px dotted #FFFFFF;
+`
+
+const ListItem = styled.div`
+    margin-right: 5vw;
+`
+
+const ContentItemTitle = styled.div`
+    margin: 0;
+`
+
+const ContentItemDescription = styled.div`
+    margin: 0;
+    margin-left: 1vw;
+`
 
 export default function Privacy() {
     return (
         <>
             <Header />
-            <div className="privacy-policy-content">
+            <Content>
                 <h2>Privacy Policy</h2>
                 <h3>Getting Started</h3>
                 <p>
@@ -20,30 +45,30 @@ export default function Privacy() {
                     <br />
                     - "I", "we", "our": This service.
                 </p>
-                <div className="border">
+                <ContentItem>
                     <h3>Information We Collect</h3>
                     <p>
                         We collect information about you when you use our services. 
                         This includes:
                     </p>
                     <ul>
-                        <li className="slightly-left">
-                            <p className="no-margin">Discord User ID</p>
-                            <p className="no-margin description">
+                        <ListItem>
+                            <ContentItemTitle>Discord User ID</ContentItemTitle>
+                            <ContentItemDescription>
                                 - This is the unique identifier for user's Discord account.
                                 <br />
                                 - This is nesscessary for us to identify who they are.
-                            </p>
-                        </li>
+                            </ContentItemDescription>
+                        </ListItem>
                     </ul>
-                </div>
-                <div className="border">
+                </ContentItem>
+                <ContentItem>
                     <h3>Who have access</h3>
                     <p>Users' data are not shared with any third party, 
                         we have direct control over users' data.
                     </p>
-                </div>
-                <div className="border">
+                </ContentItem>
+                <ContentItem>
                     <h3>Rights of users</h3>
                     <p>
                         You have the right to access, correct, and delete your information.
@@ -60,8 +85,8 @@ export default function Privacy() {
                         Alternatively, user can email us at 
                         <a href="mailto:bot@bobobot.cf">bot@bobobot.cf</a>.
                     </p>
-                </div>
-            </div>
+                </ContentItem>
+            </Content>
             <Footer />
         </>
     )

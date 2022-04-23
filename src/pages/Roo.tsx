@@ -1,7 +1,31 @@
 import { useEffect, useState } from "react";
+import styled from 'styled-components';
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
+const Title = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 30px;
+`
+
+const Roos = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vw;
+`
+
+const RooItem = styled.div`
+    margin: 3px;
+`
+
+const RooImage = styled.img`
+    margin: 3px;
+`
 
 export default function Roo() {
     const [roos, setRoos] = useState<Array<String> | null>();
@@ -25,24 +49,24 @@ export default function Roo() {
         <>
             <Header />
 
-            <div className="center bold">
+            <Title>
                 <span>Roos</span>
-            </div>
+            </Title>
 
-            <div className='roos'>
+            <Roos>
                 {
                     roos ? 
                         roos.map(roo => (
-                            <div className='roo'>
+                            <RooItem>
                                 <a href={'https://cdn.bobobot.cf/uploads/roos/' + roo}>
-                                    <img className='roo' src={'https://cdn.bobobot.cf/uploads/roos/' + roo} alt={roo.toString()} />
+                                    <RooImage src={'https://cdn.bobobot.cf/uploads/roos/' + roo} alt={roo.toString()} />
                                 </a>
-                            </div>
+                            </RooItem>
                         ))
                     :
                         <span>N/A</span>
                 }
-            </div>
+            </Roos>
 
             <Footer />
         </>

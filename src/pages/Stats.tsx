@@ -1,4 +1,5 @@
-import React, { useState, useEffect, FC, ReactElement } from 'react'
+import React, { useState, useEffect, ReactElement } from 'react'
+import styled from 'styled-components';
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -22,6 +23,34 @@ interface StatsArray {
     label: string,
     value: number
 }
+
+const StatContainer = styled.div`
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+`
+
+const StatBox = styled.div`
+    background-color: #2C394B;
+    border-radius: 8px;
+    margin: 12px;
+    padding: 12px;
+    width: 250px;
+    text-align: center;
+    transition-duration: 0.4s;
+`
+
+const StatTitle = styled.span`
+    font-size: 20px;
+    margin-top: 10px;
+`
+
+const StatValue = styled.span`
+    font-size: 30px;
+    margin-top: 10px;
+`
+
 
 export default function Stats() {
     const [stats, setStats] = useState<Array<StatsArray> | null>();
@@ -58,12 +87,12 @@ export default function Stats() {
 
         for (const item of stats) {
             arr.push(
-                <div className='box'>
-                    <span className='stat-title'>{item.label}</span>
+                <StatBox>
+                    <StatTitle>{item.label}</StatTitle>
                     <br />
                     <br />
-                    <span className='stat-value'>{item.value}</span>
-                </div> 
+                    <StatValue>{item.value}</StatValue>
+                </StatBox> 
             );
 
         }
@@ -76,9 +105,9 @@ export default function Stats() {
         <>
             <Header />
 
-            <div className='stats'>
+            <StatContainer>
                 {renderStats()}
-            </div>
+            </StatContainer>
 
             <Footer />
         </>

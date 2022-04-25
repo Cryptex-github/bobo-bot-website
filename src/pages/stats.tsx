@@ -1,20 +1,6 @@
-import React, { useState, useEffect, ReactElement } from 'react'
+import React, { ReactElement } from 'react';
+import { GetServerSideProps } from 'next';
 import styled from 'styled-components';
-
-type StatsData = {
-    Servers: number,
-    Users: number,
-    Channels: number,
-    Commands: number,
-    'Total Command Uses': number,
-    'Most Used Command': string,
-    'Postgres Latency': string,
-    'Redis Latency': string,
-    'Discord REST Latency': string,
-    'Discord WebSocket Latency': string,
-    'Total Gateway Events': number,
-    'Average Events per minute': number
-}
 
 interface StatsArray {
     label: string,
@@ -57,33 +43,30 @@ const StatValue = styled.span`
     margin-top: 10px;
 `
 
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const resp = await fetch('https://api.bobobot.cf/stats');
 
-export default function Stats() {
-    const [stats, setStats] = useState<Array<StatsArray> | null>();
+    if (!resp.ok) {
+        return {
+            props: { stats: null }
+        }
+    }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const resp = await fetch('https://api.bobobot.cf/stats');
+    const stats_json = await resp.json();
+    
+    const arr: Array<StatsArray> = [];
 
-            if (!resp.ok) {
-                setStats(null);
-                return;
-            }
+    Object.keys(stats_json).forEach((key) => {
+        arr.push({'label': key, 'value': stats_json[key]});
+    });
 
-            const stats_json = await resp.json();
-            
-            const arr: Array<StatsArray> = [];
+    return {
+        props: { stats: arr }
+    }
+}
 
-            Object.keys(stats_json).forEach((key) => {
-                arr.push({'label': key, 'value': stats_json[key]});
-            });
 
-            setStats(arr);
-        };
-
-        fetchData();
-    }, []);
-
+export default function Stats({ stats }: { stats: Array<StatsArray> | null }) {
     function renderStats(): ReactElement | Array<ReactElement> {
         if (!stats) {
             return <span>N/A</span>;
@@ -104,7 +87,6 @@ export default function Stats() {
         }
 
         return arr;
-
     }
 
     return (

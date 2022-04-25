@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import createGlobalStyle from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { APIClientContext, DefaultAPIClient } from './Api';
 import App from './App';
 import Privacy from './pages/Privacy';
 import Stats from './pages/Stats';
@@ -10,8 +11,8 @@ import Roo from './pages/Roo';
 
 const GlobalStyle = createGlobalStyle`
     * {
-    font-family: 'Mulish', sans-serif;
-    color: #FFFFFF;
+        font-family: 'Mulish', sans-serif;
+        color: #FFFFFF;
     }
 
     body {
@@ -24,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
     <React.StrictMode>
         <GlobalStyle />
+        <APIClientContext.Provider value={DefaultAPIClient}>
         <BrowserRouter>
             <Routes>
                 <Route path='/'>
@@ -34,6 +36,7 @@ ReactDOM.render(
                 </Route>
             </Routes>
         </BrowserRouter>
+        </APIClientContext.Provider>
     </React.StrictMode>,
     document.getElementById('root')
 )

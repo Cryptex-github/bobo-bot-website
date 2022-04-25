@@ -29,6 +29,11 @@ const StatContainer = styled.div`
     margin-top: 50px;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const StatBox = styled.div`
@@ -39,6 +44,10 @@ const StatBox = styled.div`
     width: 250px;
     text-align: center;
     transition-duration: 0.4s;
+
+    :hover {
+        transform: scale(1.1);
+    }
 `
 
 const StatTitle = styled.span`

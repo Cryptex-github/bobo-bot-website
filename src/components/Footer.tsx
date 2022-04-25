@@ -17,7 +17,7 @@ export default function Footer() {
     return (
         <FooterBar>
             <p>Copyright(C) 2022 by Cryptex. All rights reserved.</p>
-            <PrivacyPolicyLink>
+            <PrivacyPolicyLink href='privacy'>
                 <PrivacyPolicyText>Privacy Policy</PrivacyPolicyText>
             </PrivacyPolicyLink>
         </FooterBar>

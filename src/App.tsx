@@ -48,7 +48,7 @@ const Button = styled.button`
     border: 0;
     margin: 10px;
     font-size: 18px;
-    background-color: ${(props: { invite: any; }) => props.invite ? '#7289DA' : '#2C394B'};
+    background-color: ${(props: { invite?: any; }) => props.invite ? '#7289DA' : '#2C394B'};
     padding: 20px;
     width: 200px;
     margin-top: 3vw;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image'
 
-import icon from '../public/icon.png';
+import icon from '../../public/icon.png';
 
 const AUTH_URL = 'https://discord.com/api/oauth2/authorize?client_id=808485782067216434&redirect_uri=https%3A%2F%2Fbobobot.cf&response_type=code&scope=identify%20guilds';
 

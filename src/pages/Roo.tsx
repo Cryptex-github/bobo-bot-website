@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import styled from 'styled-components';
+import Image from "next/image";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import styled from 'styled-components';
 
 const Title = styled.div`
     display: flex;
@@ -23,7 +22,7 @@ const RooItem = styled.div`
     margin: 3px;
 `
 
-const RooImage = styled.img`
+const RooImage = styled(Image)`
     margin: 3px;
 `
 
@@ -47,19 +46,16 @@ export default function Roo() {
 
     return (
         <>
-            <Header />
-
             <Title>
                 <span>Roos</span>
             </Title>
-
             <Roos>
                 {
                     roos ? 
                         roos.map(roo => (
                             <RooItem>
                                 <a href={'https://cdn.bobobot.cf/uploads/roos/' + roo}>
-                                    <RooImage src={'https://cdn.bobobot.cf/uploads/roos/' + roo} alt={roo.toString()} />
+                                    <RooImage src={'https://cdn.bobobot.cf/uploads/roos/' + roo} alt={roo.toString()} width='120' height='120' />
                                 </a>
                             </RooItem>
                         ))
@@ -67,8 +63,6 @@ export default function Roo() {
                         <span>N/A</span>
                 }
             </Roos>
-
-            <Footer />
         </>
     )
 }

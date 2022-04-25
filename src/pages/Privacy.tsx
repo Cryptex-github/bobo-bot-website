@@ -1,10 +1,6 @@
 import { ReactElement } from 'react';
 import styled from 'styled-components';
 
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-
-
 const Content = styled.div`
     position: relative;
     padding: 25px 30px;
@@ -40,7 +36,6 @@ export default function Privacy() {
 
     return (
         <>
-            <Header />
             <Content>
                 <h2>Privacy Policy</h2>
                 <h3 id='si'><i>SECTION Ⅰ: Getting Started</i>{getPermaLink('si')}</h3>
@@ -110,7 +105,6 @@ export default function Privacy() {
                     </p>
                 </ContentItem>
             </Content>
-            <Footer />
         </>
     )
 }

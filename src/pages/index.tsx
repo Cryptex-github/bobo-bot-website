@@ -1,10 +1,6 @@
 import Typed from 'react-typed';
 import styled from 'styled-components';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-
 const Title = styled.div`
     display: flex;
     align-items: center;
@@ -66,7 +62,6 @@ const Button = styled.button`
 export default function App() {
     return (
         <>
-            <Header />
             <Title>
                 <Typed strings={['Bobo Bot, The Anime Bot but better.', 'Did I mention but better?', 'Yes I did.', 'Bobo Bot, The Anime Bot but better.']} typeSpeed={40} backSpeed={60} />
             </Title>
@@ -80,8 +75,6 @@ export default function App() {
                     <Button><Span>Support Server</Span></Button>
                 </Link>
             </ButtonContainer>
-
-            <Footer />
         </>
     )
 }

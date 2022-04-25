@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image'
 
-import icon from '../../public/icon.png';
-
 const AUTH_URL = 'https://discord.com/api/oauth2/authorize?client_id=808485782067216434&redirect_uri=https%3A%2F%2Fbobobot.cf&response_type=code&scope=identify%20guilds';
 
 const TitleBar = styled.div`
@@ -85,7 +83,7 @@ export default function Header() {
         <TitleBar>
             <TitleBlock href='.'>
                 <TitleIcon>
-                    <TitleImage src={icon} alt="icon" width='112px' height='112px' />
+                    <TitleImage src='/icon.png' alt="icon" width='112px' height='112px' />
                     <TitleText>Bobo Bot</TitleText>
                 </TitleIcon>
             </TitleBlock>

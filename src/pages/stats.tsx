@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import styled from 'styled-components';
 
@@ -43,13 +43,28 @@ const StatValue = styled.span`
     margin-top: 10px;
 `
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+const Centered = styled.div`
+    text-align: center;
+`
+
+const UpdateButton = styled.button`
+    background-color: #2C394B;
+    border-radius: 8px;
+    margin-top: 1vw;
+    font-size: 30px;
+    border: none;
+
+    :hover {
+        background-color: #213249;
+        cursor: pointer;
+    }
+`
+
+async function getStats(): Promise<StatsArray[] | null> {
     const resp = await fetch('https://api.bobobot.cf/stats');
 
     if (!resp.ok) {
-        return {
-            props: { stats: null }
-        }
+        return null;
     }
 
     const stats_json = await resp.json();
@@ -60,21 +75,35 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         arr.push({'label': key, 'value': stats_json[key]});
     });
 
+    return arr;
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const resp = await getStats();
+
+    if (!resp) {
+        return {
+            props: { stats: null }
+        }
+    }
+
     return {
-        props: { stats: arr }
+        props: { stats: resp }
     }
 }
 
 
 export default function Stats({ stats }: { stats: Array<StatsArray> | null }) {
+    const [updatedStats, setStats] = useState<StatsArray[] | null>(stats);
+
     function renderStats(): ReactElement | Array<ReactElement> {
-        if (!stats) {
+        if (!updatedStats) {
             return <span>N/A</span>;
         }
 
         const arr: Array<ReactElement> = [];
 
-        for (const item of stats) {
+        for (const item of updatedStats) {
             arr.push(
                 <StatBox>
                     <StatTitle>{item.label}</StatTitle>
@@ -89,9 +118,24 @@ export default function Stats({ stats }: { stats: Array<StatsArray> | null }) {
         return arr;
     }
 
+    async function updateStats() {
+        const resp = await getStats();
+
+        if (!resp) {
+            return;
+        }
+
+        setStats(resp);
+    }
+
     return (
         <>
+            <Centered>
+                <UpdateButton onClick={updateStats}>&#128472; Refresh stats</UpdateButton>
+            </Centered>
+
             <StatContainer>
+
                 {renderStats()}
             </StatContainer>
         </>

@@ -35,8 +35,8 @@ export default function Privacy() {
     }
 
     return (
-        <>
-            <Content>
+        <Content>
+            <ContentItem>
                 <h2>Privacy Policy</h2>
                 <h3 id='si'><i>SECTION Ⅰ: Getting Started</i>{getPermaLink('si')}</h3>
                 <p>
@@ -62,49 +62,49 @@ export default function Privacy() {
                     You, the user accessing this service;
                     The legal entity you are representing, if any.
                 </p>
-                <ContentItem>
-                    <h3 id='sii'><i>SECTION Ⅱ: Information We Collect</i>{getPermaLink('sii')}</h3>
-                    <p>
-                        We collect information about you when you use our services. 
-                        This includes:
-                    </p>
-                    <ul>
-                        <ListItem>
-                            <ContentItemTitle>Discord User ID</ContentItemTitle>
-                            <ContentItemDescription>
-                                - This is the unique identifier for user's Discord account.
-                                <br />
-                                - This is nesscessary for us to identify who they are.
-                            </ContentItemDescription>
-                        </ListItem>
-                    </ul>
-                </ContentItem>
-                <ContentItem>
-                    <h3 id='siii'><i>SECTION Ⅲ: Who have access</i>{getPermaLink('siii')}</h3>
-                    <p>Users' data are not shared with any third party, 
-                        we have direct control over users' data.
-                    </p>
-                </ContentItem>
-                <ContentItem>
-                    <h3 id='siv'><i>SECTION Ⅳ: Rights of users</i>{getPermaLink('siv')}</h3>
-                    <p>
-                        You have the right to access, correct, and delete your information.
-                        <br />
-                        You also have the right to request that your information be corrected, 
-                        and to have your information deleted.
-                    </p>
-                    <h4 id='siv-i'>
-                        <i>SECTION: Ⅳ-Ⅰ How to exercise these rights</i>
-                        {getPermaLink('siv-i')}
-                    </h4>
-                    <p>
-                        User can contact us at our <a href="https://discord.gg/AHYTRPr8hZ">Discord Support Server</a>.
-                        <br />
-                        Alternatively, user can email us at 
-                        <a href="mailto:bot@bobobot.cf"> bot@bobobot.cf</a>.
-                    </p>
-                </ContentItem>
-            </Content>
-        </>
+            </ContentItem>
+            <ContentItem>
+                <h3 id='sii'><i>SECTION Ⅱ: Information We Collect</i>{getPermaLink('sii')}</h3>
+                <p>
+                    We collect information about you when you use our services. 
+                    This includes:
+                </p>
+                <ul>
+                    <ListItem>
+                        <ContentItemTitle>Discord User ID</ContentItemTitle>
+                        <ContentItemDescription>
+                            - This is the unique identifier for user's Discord account.
+                            <br />
+                            - This is nesscessary for us to identify who they are.
+                        </ContentItemDescription>
+                    </ListItem>
+                </ul>
+            </ContentItem>
+            <ContentItem>
+                <h3 id='siii'><i>SECTION Ⅲ: Who have access</i>{getPermaLink('siii')}</h3>
+                <p>Users' data are not shared with any third party, 
+                    we have direct control over users' data.
+                </p>
+            </ContentItem>
+            <ContentItem>
+                <h3 id='siv'><i>SECTION Ⅳ: Rights of users</i>{getPermaLink('siv')}</h3>
+                <p>
+                    You have the right to access, correct, and delete your information.
+                    <br />
+                    You also have the right to request that your information be corrected, 
+                    and to have your information deleted.
+                </p>
+                <h4 id='siv-i'>
+                    <i>SECTION: Ⅳ-Ⅰ How to exercise these rights</i>
+                    {getPermaLink('siv-i')}
+                </h4>
+                <p>
+                    User can contact us at our <a href="https://discord.gg/AHYTRPr8hZ">Discord Support Server</a>.
+                    <br />
+                    Alternatively, user can email us at 
+                    <a href="mailto:bot@bobobot.cf"> bot@bobobot.cf</a>.
+                </p>
+            </ContentItem>
+        </Content>
     )
 }

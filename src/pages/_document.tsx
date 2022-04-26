@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
             <meta property="og:image" content="/icon.png" />
             <meta property="description" content="Bobo Bot - A Discord Bot" />
             <meta property="og:description" content="Bobo Bot - A Discord Bot" />
-            <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=optional" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet" />
         </Head>
         <body>
             <Main />

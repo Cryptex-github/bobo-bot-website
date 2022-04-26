@@ -11,19 +11,19 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://bobobot.cf/privacy.html</loc>
+  <loc>https://bobobot.cf/privacy</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bobobot.cf/roo.html</loc>
+  <loc>https://bobobot.cf/roo</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bobobot.cf/stats.html</loc>
+  <loc>https://bobobot.cf/stats</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bobobot.cf/tos.html</loc>
+  <loc>https://bobobot.cf/tos</loc>
   <priority>0.80</priority>
 </url>
 </urlset>

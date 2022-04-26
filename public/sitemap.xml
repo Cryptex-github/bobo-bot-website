@@ -21,7 +21,9 @@
 <url>
   <loc>https://bobobot.cf/stats.html</loc>
   <priority>0.80</priority>
-
-
-
+</url>
+<url>
+  <loc>https://bobobot.cf/terms.html</loc>
+  <priority>0.80</priority>
+</url>
 </urlset>

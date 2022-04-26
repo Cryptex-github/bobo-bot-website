@@ -83,7 +83,7 @@ export default function Header() {
         <TitleBar>
             <TitleBlock href='.'>
                 <TitleIcon>
-                    <TitleImage src='/icon.png' alt="icon" width='112px' height='112px' />
+                    <TitleImage src='/icon.png' alt="icon" width='112px' height='112px' priority />
                     <TitleText>Bobo Bot</TitleText>
                 </TitleIcon>
             </TitleBlock>

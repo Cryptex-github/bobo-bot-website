@@ -1,8 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
-import { NextStrictCSP } from 'next-strict-csp';
 import { ServerStyleSheet } from 'styled-components';
-
-const HeadCSP = process.env.NODE_ENV === 'production' ? NextStrictCSP : Head;
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -34,7 +31,7 @@ export default class MyDocument extends Document {
   render() {
     return (
         <Html lang='en'>
-        <HeadCSP>
+        <Head>
             <meta charSet="utf-8" />
             <link rel="icon" href="/icon.png" type="image/x-icon" />
             <meta property="og:title" content="Bobo Bot" />
@@ -44,7 +41,7 @@ export default class MyDocument extends Document {
             <meta property="description" content="Bobo Bot - A Discord Bot" />
             <meta property="og:description" content="Bobo Bot - A Discord Bot" />
             <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet" />
-        </HeadCSP>
+        </Head>
         <body>
             <Main />
             <NextScript />

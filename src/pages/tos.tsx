@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Content = styled.div`
@@ -63,7 +64,7 @@ export default function TermsOfService() {
 
                 <p><b>
                         By using our service, you agree to our Terms of Service and other legal documents like our 
-                        <a href='/privacy'><span> Privacy Policy</span></a>
+                        <Link href='privacy' passHref><a><span>Privacy Policy</span></a></Link>
                 </b></p>
             </ContentItem>
 

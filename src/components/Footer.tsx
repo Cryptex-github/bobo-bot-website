@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styled from 'styled-components';
 
 const FooterBar = styled.div`
@@ -5,7 +7,7 @@ const FooterBar = styled.div`
     padding: 50px 0;
     text-align: center;
 `
-const Link = styled.a`
+const LinkInner = styled.a`
     text-decoration: none;
 `
 
@@ -22,11 +24,15 @@ export default function Footer() {
     return (
         <FooterBar>
             <p>Copyright(C) 2022 by Cryptex. All rights reserved.</p>
-            <Link href='privacy'>
-                <Text>Privacy Policy</Text>
+            <Link href='privacy' passHref>
+                <LinkInner>
+                    <Text>Privacy Policy</Text>
+                </LinkInner>
             </Link>
-            <Link href='tos'>
-                <Text>Terms of Service</Text>
+            <Link href='tos' passHref>
+                <LinkInner>
+                    <Text>Terms of Service</Text>
+                </LinkInner>
             </Link>
         </FooterBar>
     )

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Icon from '../../public/icon.png'
 
@@ -83,23 +84,29 @@ const NavigationBarItemText = styled.span`
 export default function Header() {
     return (
         <TitleBar>
-            <TitleBlock href='.'>
-                <TitleIcon>
-                    <TitleImage src={Icon} alt="icon" priority />
-                    <TitleText>Bobo Bot</TitleText>
-                </TitleIcon>
-            </TitleBlock>
+            <Link href='.' passHref>
+                <TitleBlock>
+                    <TitleIcon>
+                        <TitleImage src={Icon} alt="icon" priority />
+                        <TitleText>Bobo Bot</TitleText>
+                    </TitleIcon>
+                </TitleBlock>
+            </Link>
 
             <NavigationBarFirstItem>
-                <NavigationBarItemLink href='stats'>
-                    <NavigationBarItemText>Statistics</NavigationBarItemText>
-                </NavigationBarItemLink>
+                <Link href='stats' passHref>
+                    <NavigationBarItemLink>
+                        <NavigationBarItemText>Statistics</NavigationBarItemText>
+                    </NavigationBarItemLink>
+                </Link>
             </NavigationBarFirstItem>
 
             <NavigationBarItem>
-                <NavigationBarItemLink href='roo'>
-                    <NavigationBarItemText>Roo</NavigationBarItemText>
-                </NavigationBarItemLink>
+                <Link href='roo' passHref>
+                    <NavigationBarItemLink>
+                        <NavigationBarItemText>Roo</NavigationBarItemText>
+                    </NavigationBarItemLink>
+                </Link>
             </NavigationBarItem>
         </TitleBar>
     )

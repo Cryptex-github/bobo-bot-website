@@ -106,7 +106,7 @@ export default function Stats({ stats }: { stats: Array<StatsArray> | null }) {
 
         for (const item of updatedStats) {
             arr.push(
-                <StatBox>
+                <StatBox key={item.label}>
                     <StatTitle>{item.label}</StatTitle>
                     <br />
                     <br />
@@ -139,7 +139,6 @@ export default function Stats({ stats }: { stats: Array<StatsArray> | null }) {
             </Centered>
 
             <StatContainer>
-
                 {renderStats()}
             </StatContainer>
         </>

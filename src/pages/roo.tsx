@@ -38,7 +38,7 @@ export default function Roo() {
                 return;
             }
 
-            setRoos((await resp.text()).split('\n'));
+            setRoos(((await resp.text()).split('\n')).filter(r => r));
         };
 
         fetchData();

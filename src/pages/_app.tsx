@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <React.StrictMode>
             <GlobalStyle />
             <APIClientContext.Provider value={DefaultAPIClient}>
-                <IconContext.Provider value={{ color: '#FFFFFF', style: { verticalAlign: 'middle' } }}>
+                <IconContext.Provider value={{ style: { verticalAlign: 'middle', fill: '#FFFFFF' } }}>
                     <Head>
                         <title>Bobo Bot</title>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

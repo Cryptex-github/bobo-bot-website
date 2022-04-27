@@ -27,7 +27,7 @@ const RooImage = styled(Image)`
 `
 
 export default function Roo() {
-    const [roos, setRoos] = useState<Array<String> | null>();
+    const [roos, setRoos] = useState<Array<string> | null>();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -53,7 +53,7 @@ export default function Roo() {
                 {
                     roos ? 
                         roos.map(roo => (
-                            <RooItem>
+                            <RooItem key={roo}>
                                 <a href={'https://cdn.bobobot.cf/uploads/roos/' + roo}>
                                     <RooImage src={'https://cdn.bobobot.cf/uploads/roos/' + roo} alt={roo.toString()} width='120' height='120' />
                                 </a>

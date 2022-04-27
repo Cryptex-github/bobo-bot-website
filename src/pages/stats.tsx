@@ -1,5 +1,4 @@
 import React, { ReactElement, useState } from 'react';
-import { GrRefresh } from 'react-icons/gr';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
@@ -136,7 +135,7 @@ export default function Stats({ stats }: { stats: Array<StatsArray> | null }) {
                 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet" />
             </Head>
             <Centered>
-                <UpdateButton onClick={updateStats}><GrRefresh/> Refresh stats</UpdateButton>
+                <UpdateButton onClick={updateStats}>Refresh Stats</UpdateButton>
             </Centered>
 
             <StatContainer>

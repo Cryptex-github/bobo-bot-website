@@ -46,6 +46,10 @@ const nextConfig = {
             {
                 source: '/:path*',
                 headers: securityHeaders,
+            },
+            {
+                source: '/:all*(png|jpg|txt|xml)',
+                value: 'public, max-age=315360000, must-revalidate',
             }
         ]
     }

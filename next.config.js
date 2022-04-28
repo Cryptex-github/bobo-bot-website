@@ -49,7 +49,7 @@ const nextConfig = {
             },
             {
                 source: '/:all*(png|jpg|txt|xml)',
-                value: 'public, max-age=315360000, must-revalidate',
+                headers: 'public, max-age=315360000, must-revalidate',
             }
         ]
     }

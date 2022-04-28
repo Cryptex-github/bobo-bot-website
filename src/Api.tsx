@@ -32,14 +32,18 @@ export class APIClient {
     OauthData: OauthData | null;
     UserData: UserData | null;
     Authorization: string | null;
+    access_token: string | null;
+    refresh_token: string | null;
 
     constructor() {
         this.OauthData = null;
         this.UserData = null;
         this.Authorization = null;
+        this.access_token = null;
+        this.refresh_token = null;
     }
 
-    async getAccessToken(): Promise<string> {
+    async getAccessToken(): Promise<string | undefined> {
         let accessToken = Cookies.get('access_token');
 
         if (accessToken) {
@@ -56,9 +60,16 @@ export class APIClient {
 
             Cookies.set('access_token', this.OauthData!.access_token, { expires: this.OauthData!.expires_in / 86400 });
             Cookies.set('refresh_token', this.OauthData!.refresh_token, { expires: this.OauthData!.expires_in / 86400 });
-        }
 
-        return this.OauthData!.access_token;
+            this.access_token = this.OauthData!.access_token;
+            this.refresh_token = this.OauthData!.refresh_token;
+
+            return this.access_token;
+        }
+    }
+
+    async attemptLogin(): Promise<boolean> {
+        return !! await this.getAccessToken();
     }
 
     async getUser(): Promise<UserData> {
@@ -73,7 +84,7 @@ export class APIClient {
             return this.UserData!;
         }
 
-        const data = await this.request('GET', '/discord/user');
+        const data = await this.request('GET', '/discord/user', { params: {} });
 
         this.UserData = data;
         Cookies.set('user_data', JSON.stringify(data), { expires: 1 });
@@ -82,7 +93,7 @@ export class APIClient {
     }
 
     async exchangeCode(code: string): Promise<OauthData> {
-        const data = await this.request('POST', '/oauth2/token', { auth: false, params: { code } });
+        const data = await this.request('POST', '/oauth2/token', { params: { code } });
         this.OauthData = data;
 
         return data
@@ -91,9 +102,21 @@ export class APIClient {
     async request(
         method: Method, 
         route: string, 
-        { json, params, auth, headers }: 
-        { json?: any, params?: any, auth: boolean, headers?: any } = 
-        { auth: true }
+        { 
+            json, 
+            params, 
+            auth, 
+            headers
+        }: 
+        { 
+            json?: any, 
+            params?: any, 
+            auth?: boolean, 
+            headers?: any
+        } = 
+        { 
+            auth: false
+        }
         ): Promise<any> {
         let body;
 

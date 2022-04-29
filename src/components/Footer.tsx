@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styled from 'styled-components';
 
 const FooterBar = styled.div`
@@ -5,21 +7,33 @@ const FooterBar = styled.div`
     padding: 50px 0;
     text-align: center;
 `
-const PrivacyPolicyLink = styled.a`
+const LinkInner = styled.a`
     text-decoration: none;
 `
 
-const PrivacyPolicyText = styled.p`
-    margin: 0;
+const Text = styled.span`
+    padding-left: 4px;
+    padding-right: 4px;
+
+    :hover {
+        color: #FFFFFFD9;
+    }
 `
 
 export default function Footer() {
     return (
         <FooterBar>
             <p>Copyright(C) 2022 by Cryptex. All rights reserved.</p>
-            <PrivacyPolicyLink href='privacy'>
-                <PrivacyPolicyText>Privacy Policy</PrivacyPolicyText>
-            </PrivacyPolicyLink>
+            <Link href='privacy' passHref>
+                <LinkInner>
+                    <Text>Privacy Policy</Text>
+                </LinkInner>
+            </Link>
+            <Link href='tos' passHref>
+                <LinkInner>
+                    <Text>Terms of Service</Text>
+                </LinkInner>
+            </Link>
         </FooterBar>
     )
 }

@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import Icon from '../../public/icon.png'
 
 const AUTH_URL = 'https://discord.com/api/oauth2/authorize?client_id=808485782067216434&redirect_uri=https%3A%2F%2Fbobobot.cf&response_type=code&scope=identify%20guilds';
 
@@ -18,7 +22,7 @@ const TitleIcon = styled.div`
     align-items: center;
 `;
 
-const TitleImage = styled.img`
+const TitleImage = styled(Image)`
     border-radius: 50px;
     margin: 13px;
     font-size: 40px;
@@ -80,23 +84,29 @@ const NavigationBarItemText = styled.span`
 export default function Header() {
     return (
         <TitleBar>
-            <TitleBlock href='.'>
-                <TitleIcon>
-                    <TitleImage src="/icon.png" alt="icon" width="112px" height="112px" />
-                    <TitleText>Bobo Bot</TitleText>
-                </TitleIcon>
-            </TitleBlock>
+            <Link href='.' passHref>
+                <TitleBlock>
+                    <TitleIcon>
+                        <TitleImage src={Icon} alt="icon" priority />
+                        <TitleText>Bobo Bot</TitleText>
+                    </TitleIcon>
+                </TitleBlock>
+            </Link>
 
             <NavigationBarFirstItem>
-                <NavigationBarItemLink href='stats'>
-                    <NavigationBarItemText>Statistics</NavigationBarItemText>
-                </NavigationBarItemLink>
+                <Link href='stats' passHref>
+                    <NavigationBarItemLink>
+                        <NavigationBarItemText>Statistics</NavigationBarItemText>
+                    </NavigationBarItemLink>
+                </Link>
             </NavigationBarFirstItem>
 
             <NavigationBarItem>
-                <NavigationBarItemLink href='roo'>
-                    <NavigationBarItemText>Roo</NavigationBarItemText>
-                </NavigationBarItemLink>
+                <Link href='roo' passHref>
+                    <NavigationBarItemLink>
+                        <NavigationBarItemText>Roo</NavigationBarItemText>
+                    </NavigationBarItemLink>
+                </Link>
             </NavigationBarItem>
         </TitleBar>
     )

@@ -50,8 +50,8 @@ const Centered = styled.div`
 
 const fetcher = (...args: [any]) => fetch(...args).then(res => res.json());
 
-function getStats(): ReactElement | Array<ReactElement> {
-    const { data, error } = useSWR('https://api.bobobot.cf/stats', fetcher, { refreshInterval: 15000 });
+function getStats(resp: any): ReactElement | Array<ReactElement> {
+    const { data, error } = resp;
     let status_text: string = '';
 
     if (error) {
@@ -105,7 +105,7 @@ function getStats(): ReactElement | Array<ReactElement> {
 export default function Stats() {
     return (
         <>
-            {getStats()}
+            {getStats(useSWR('https://api.bobobot.cf/stats', fetcher, { refreshInterval: 15000 }))}
         </>
     )
 }

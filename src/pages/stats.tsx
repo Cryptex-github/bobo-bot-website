@@ -1,5 +1,5 @@
-import React, { ReactElement, useState } from 'react';
-import { GetServerSideProps } from 'next';
+import { ReactElement } from 'react';
+import useSWR from 'swr';
 import Head from 'next/head';
 import styled from 'styled-components';
 
@@ -48,99 +48,64 @@ const Centered = styled.div`
     text-align: center;
 `
 
-const UpdateButton = styled.button`
-    background-color: #2C394B;
-    border-radius: 8px;
-    margin-top: 1vw;
-    font-size: 30px;
-    border: none;
+const fetcher = (...args: [any]) => fetch(...args).then(res => res.json());
 
-    :hover {
-        background-color: #213249;
-        cursor: pointer;
-    }
-`
+function getStats(): ReactElement | Array<ReactElement> {
+    const { data, error } = useSWR('https://api.bobobot.cf/stats', fetcher, { refreshInterval: 15000 });
+    let status_text: string = '';
 
-async function getStats(): Promise<StatsArray[] | null> {
-    const resp = await fetch('https://api.bobobot.cf/stats');
-
-    if (!resp.ok) {
-        return null;
+    if (error) {
+        status_text = 'Failed to fetch stats';
     }
 
-    const stats_json = await resp.json();
-    
-    const arr: Array<StatsArray> = [];
+    if (!data) {
+        status_text = 'Fetching stats, please wait.';
+    }
 
-    Object.keys(stats_json).forEach((key) => {
-        arr.push({'label': key, 'value': stats_json[key]});
+    if (status_text !== '') {
+        return (
+            <>
+                <Centered>
+                    <p>{status_text}</p>
+                </Centered>
+            </>
+        )
+    }
+
+    const stats: Array<ReactElement> = [];
+
+    Object.keys(data).forEach((key) => {
+        const label = key;
+        const value = data[key];
+
+        stats.push(
+            <StatBox key={label}>
+                <StatTitle>{label}</StatTitle>
+                <br />
+                <br />
+                <StatValue>{value}</StatValue>
+            </StatBox> 
+        );
+
     });
-
-    return arr;
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const resp = await getStats();
-
-    if (!resp) {
-        return {
-            props: { stats: null }
-        }
-    }
-
-    return {
-        props: { stats: resp }
-    }
-}
-
-
-export default function Stats({ stats }: { stats: Array<StatsArray> | null }) {
-    const [updatedStats, setStats] = useState<StatsArray[] | null>(stats);
-
-    function renderStats(): ReactElement | Array<ReactElement> {
-        if (!updatedStats) {
-            return <span>N/A</span>;
-        }
-
-        const arr: Array<ReactElement> = [];
-
-        for (const item of updatedStats) {
-            arr.push(
-                <StatBox key={item.label}>
-                    <StatTitle>{item.label}</StatTitle>
-                    <br />
-                    <br />
-                    <StatValue>{item.value}</StatValue>
-                </StatBox> 
-            );
-
-        }
-
-        return arr;
-    }
-
-    async function updateStats() {
-        const resp = await getStats();
-
-        if (!resp) {
-            return;
-        }
-
-        setStats(resp);
-    }
 
     return (
         <>
-            <Head>
-                <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet" />
-            </Head>
             <Centered>
-                <UpdateButton onClick={updateStats}>Refresh Stats</UpdateButton>
+                <p>This page auto updates every 15 seconds.</p>
             </Centered>
 
             <StatContainer>
-                {renderStats()}
+                {stats}
             </StatContainer>
+        </>
+    )
+}
+
+export default function Stats() {
+    return (
+        <>
+            {getStats()}
         </>
     )
 }

@@ -40,6 +40,7 @@ const nextConfig = {
     images: {
         domains: ['cdn.bobobot.cf'],
     },
+    swcMinify: true,
 
     async headers() {
         return [

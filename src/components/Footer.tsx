@@ -7,6 +7,7 @@ const FooterBar = styled.div`
     padding: 50px 0;
     text-align: center;
 `
+
 const LinkInner = styled.a`
     text-decoration: none;
 `

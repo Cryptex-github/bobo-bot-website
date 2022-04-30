@@ -108,6 +108,14 @@ export default function Header() {
                     </NavigationBarItemLink>
                 </Link>
             </NavigationBarItem>
+
+            <NavigationBarItem>
+                <Link href='commands' passHref>
+                    <NavigationBarItemLink>
+                        <NavigationBarItemText>Commands</NavigationBarItemText>
+                    </NavigationBarItemLink>
+                </Link>
+            </NavigationBarItem>
         </TitleBar>
     )
 }

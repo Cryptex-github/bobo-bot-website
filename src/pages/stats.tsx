@@ -1,6 +1,5 @@
 import { ReactElement } from 'react';
 import useSWR from 'swr';
-import Head from 'next/head';
 import styled from 'styled-components';
 
 interface StatsArray {

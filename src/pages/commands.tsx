@@ -40,7 +40,7 @@ const CommandContainer = styled.div`
 `
 
 const Command = styled.div`
-    background-color: #05263d;
+    background-color: #051a2b;
     border-radius: 8px;
     transition-duration: 0.2s;
 
@@ -71,7 +71,7 @@ const CategoryContainer = styled.div`
     left: 2vw;
     padding-left: 1vw;
     position: sticky;
-    background-color: #05263d;
+    background-color: #051a2b;
     height: 100%;
 `
 

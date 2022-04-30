@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 const GlobalStyle = createGlobalStyle`
     * {
         font-family: 'Mulish', sans-serif;
-        color: #FFFFFF;
+        color: #ffffffef;
     }
 
     body {

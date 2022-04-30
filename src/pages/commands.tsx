@@ -124,7 +124,7 @@ export default function Commands({ commands }: { commands: CommandsResponse }) {
                             return (
                                 <Command key={command.name}>
                                     <CommandTitle>
-                                        {command.name}
+                                        {command.name} {command.args}
                                     </CommandTitle>
 
                                     <CommandDescription>

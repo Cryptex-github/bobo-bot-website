@@ -40,23 +40,23 @@ export default function Privacy() {
                 <h2>Privacy Policy</h2>
                 <h3 id='si'><i>SECTION Ⅰ: Getting Started</i>{getPermaLink('si')}</h3>
                 <p>
-                    We honor the privacy of our users. 
-                    This privacy policy describes 
-                    how we collect, use, and share information 
+                    We honor the privacy of our users.
+                    This privacy policy describes
+                    how we collect, use, and share information
                     about our users' when they use our services.
                 </p>
                 <p>
                     In this policy, the following terms have the following meaning:
                     <br />
                     <br />
-                    - "I", "we", "our": 
-                    Shall include but are not limited to: 
-                    this service; 
+                    - "I", "we", "our":
+                    Shall include but are not limited to:
+                    this service;
                     Whoever operating this service;
                     this website;
                     any associated services.
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     - "you", "your":
                     Shall include but are not limited to:
                     You, the user accessing this service;
@@ -66,7 +66,7 @@ export default function Privacy() {
             <ContentItem>
                 <h3 id='sii'><i>SECTION Ⅱ: Information We Collect</i>{getPermaLink('sii')}</h3>
                 <p>
-                    We collect information about you when you use our services. 
+                    We collect information about you when you use our services.
                     This includes:
                 </p>
                 <ul>
@@ -82,7 +82,7 @@ export default function Privacy() {
             </ContentItem>
             <ContentItem>
                 <h3 id='siii'><i>SECTION Ⅲ: Who have access</i>{getPermaLink('siii')}</h3>
-                <p>Users' data are not shared with any third party, 
+                <p>Users' data are not shared with any third party,
                     we have direct control over users' data.
                 </p>
             </ContentItem>
@@ -91,7 +91,7 @@ export default function Privacy() {
                 <p>
                     You have the right to access, correct, and delete your information.
                     <br />
-                    You also have the right to request that your information be corrected, 
+                    You also have the right to request that your information be corrected,
                     and to have your information deleted.
                 </p>
                 <h4 id='siv-i'>
@@ -101,7 +101,7 @@ export default function Privacy() {
                 <p>
                     User can contact us at our <a href="https://discord.gg/AHYTRPr8hZ">Discord Support Server</a>.
                     <br />
-                    Alternatively, user can email us at 
+                    Alternatively, user can email us at
                     <a href="mailto:bot@bobobot.cf"> bot@bobobot.cf</a>.
                 </p>
             </ContentItem>

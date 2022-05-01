@@ -64,7 +64,6 @@ const CategoryContainer = styled.div`
     border-style: solid;
     border-width: 2px;
     border-radius: 8px;
-    border-width: 1px;
     width: 10vw;
     margin: 5px 0 5px 0;
     position: relative;
@@ -100,45 +99,44 @@ export async function getStaticProps() {
 }
 
 export default function Commands({ commands }: { commands: CommandsResponse }) {
-    const [ currentCategory, setCurrentCategory ] = useState<string | null>('RTFM');
+    const [currentCategory, setCurrentCategory] = useState<string | null>('RTFM');
 
     return (
         <>
             <Title>Commands</Title>
-            
+
             <ContentContainer>
-            <CategoryContainer>
-                <CategoryTitle>Categories</CategoryTitle>
-                {commands.categories.map(category => {
-                    return (
-                        <CategoryItem key={category} onClick={() => setCurrentCategory(category)}>
-                            {category}
-                        </CategoryItem>
-                    )
-                })}
-            </CategoryContainer>
-
-            <CommandContainer>
-                    {commands.commands.map(command => {
-                        if (currentCategory && currentCategory === command.category) {
-                            return (
-                                <Command key={command.name}>
-                                    <CommandTitle>
-                                        {command.name} {command.args}
-                                    </CommandTitle>
-
-                                    <CommandDescription>
-                                        {command.description}
-                                        {command.aliases.length > 0 ? <><br/><br/></> : ''}
-                                        {command.aliases.length > 0 ? `Aliases: ${command.aliases.join(', ')}` : ''}
-                                        {command.aliases.length > 0 ? <br/> : ''}
-                                        {command.cooldown ? `Cooldown: ${command.cooldown}` : ''}
-                                    </CommandDescription>
-                                </Command>
-                            )
-                        }
+                <CategoryContainer>
+                    <CategoryTitle>Categories</CategoryTitle>
+                    {commands.categories.map(category => {
+                        return (
+                            <CategoryItem key={category} onClick={() => setCurrentCategory(category)}>
+                                {category}
+                            </CategoryItem>
+                        )
                     })}
-            </CommandContainer>
+                </CategoryContainer>
+
+                <CommandContainer>
+                    {commands.commands.filter(command => command.category === currentCategory).map(command => {
+                        return (
+                            <Command key={command.name}>
+                                <CommandTitle>
+                                    {command.name} {command.args}
+                                </CommandTitle>
+
+                                <CommandDescription>
+                                    {command.description}
+                                    {command.aliases.length > 0 ? <><br /><br /></> : ''}
+                                    {command.aliases.length > 0 ? `Aliases: ${command.aliases.join(', ')}` : ''}
+                                    {command.aliases.length > 0 ? <br /> : ''}
+                                    {command.cooldown ? `Cooldown: ${command.cooldown}` : ''}
+                                </CommandDescription>
+                            </Command>
+                        )
+                    }
+                    )}
+                </CommandContainer>
             </ContentContainer>
 
         </>

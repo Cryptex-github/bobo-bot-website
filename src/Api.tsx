@@ -100,24 +100,24 @@ export class APIClient {
     }
 
     async request(
-        method: Method, 
-        route: string, 
-        { 
-            json, 
-            params, 
-            auth, 
+        method: Method,
+        route: string,
+        {
+            json,
+            params,
+            auth,
             headers
-        }: 
-        { 
-            json?: any, 
-            params?: any, 
-            auth?: boolean, 
-            headers?: any
-        } = 
-        { 
-            auth: false
-        }
-        ): Promise<any> {
+        }:
+            {
+                json?: any,
+                params?: any,
+                auth?: boolean,
+                headers?: any
+            } =
+            {
+                auth: false
+            }
+    ): Promise<any> {
         let body;
 
         if (json) {
@@ -139,7 +139,7 @@ export class APIClient {
             console.error(message);
             throw new Error(message);
         }
-        
+
         if (resp.headers.get('Content-Type') === 'application/json') {
             return JSON.parse(text);
         }

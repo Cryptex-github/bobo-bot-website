@@ -41,21 +41,21 @@ export default function TermsOfService() {
             <ContentItem>
                 <h3 id='si'><i>SECTION Ⅰ: Getting Started</i>{getPermaLink('si')}</h3>
                 <p>
-                    These terms set forth our legal obligations to each other. 
+                    These terms set forth our legal obligations to each other.
                     They apply to your use of our services.
                 </p>
                 <p>
                     In this policy, the following terms have the following meaning:
                     <br />
                     <br />
-                    - "I", "we", "our": 
-                    Shall include but are not limited to: 
-                    this service; 
+                    - "I", "we", "our":
+                    Shall include but are not limited to:
+                    this service;
                     Whoever operating this service;
                     this website;
                     any associated services.
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     - "you", "your":
                     Shall include but are not limited to:
                     You, the user accessing this service;
@@ -63,8 +63,8 @@ export default function TermsOfService() {
                 </p>
 
                 <p><b>
-                        By using our service, you agree to our Terms of Service and other legal documents like our 
-                        <Link href='privacy' passHref><a><span>Privacy Policy</span></a></Link>
+                    By using our service, you agree to our Terms of Service and other legal documents like our
+                    <Link href='privacy' passHref><a><span>Privacy Policy</span></a></Link>
                 </b></p>
             </ContentItem>
 
@@ -72,8 +72,8 @@ export default function TermsOfService() {
                 <h3 id='sii'><i>SECTION Ⅱ: User Content</i>{getPermaLink('sii')}</h3>
                 <p>
                     Certain commands and features of our services may allow you to post, upload certain user content,
-                    we claim no ownership or control over that content. However, by submitting, posting or uploading user content, 
-                    you grant us a non-exclusive, worldwide, perpetual, irrevocable, royalty-free, sublicensable, transferable right 
+                    we claim no ownership or control over that content. However, by submitting, posting or uploading user content,
+                    you grant us a non-exclusive, worldwide, perpetual, irrevocable, royalty-free, sublicensable, transferable right
                     to use, copy, modify, publish, translate, create derivative works from, distribute, and display such content in any and all media.
                 </p>
             </ContentItem>
@@ -81,14 +81,14 @@ export default function TermsOfService() {
             <ContentItem>
                 <h3 id='siii'><i>SECTION Ⅲ: Rights to use</i>{getPermaLink('siii')}</h3>
                 <p>
-                    Subject to your compliance with these Terms of Service, we grant you a limited, non-exclusive, non-transferable, non-sublicensable license 
+                    Subject to your compliance with these Terms of Service, we grant you a limited, non-exclusive, non-transferable, non-sublicensable license
                     to access and make personal, non-commerical use of this website.
-                    <br/>
+                    <br />
                     This license grant does not include: any resale or commerical use of this website or the content therein;
                     You may not, by any means, modify, copy, or redistribute this website or the content therein;
-                    <br/>
+                    <br />
                     You must not use our services for any purpose that is unlawful or prohibited by these terms.
-                    <br/>
+                    <br />
                     You must not, in the use of our services, violate any laws in your jurisdiction (including but not limited to copyright laws).
 
                 </p>
@@ -99,7 +99,7 @@ export default function TermsOfService() {
                 <p>
                     We do not guarantee that our services will be uninterrupted, secure, or error-free.
                     <br />
-                    Except as expressly provided, this website including all its content therein, and this service 
+                    Except as expressly provided, this website including all its content therein, and this service
                     are provided on an "as is" and "as available" and "with all fault" basis.
                     without warranty of any kind, express
                     or implied, including but not limited to the warranties of merchantability,
@@ -107,7 +107,7 @@ export default function TermsOfService() {
                     authors or copyright holders be liable for any claim, damages or other
                     liability, whether in an action of contract, tort or otherwise, arising
                     from, out of or in connection with the website or service or the use or other
-                    dealings in the website or service. 
+                    dealings in the website or service.
                 </p>
             </ContentItem>
 

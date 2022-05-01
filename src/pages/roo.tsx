@@ -51,7 +51,7 @@ export default function Roo() {
             </Title>
             <Roos>
                 {
-                    roos ? 
+                    roos ?
                         roos.map(roo => (
                             <RooItem key={roo}>
                                 <a href={'https://cdn.bobobot.cf/uploads/roos/' + roo}>
@@ -59,7 +59,7 @@ export default function Roo() {
                                 </a>
                             </RooItem>
                         ))
-                    :
+                        :
                         <span>N/A</span>
                 }
             </Roos>

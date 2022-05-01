@@ -83,7 +83,7 @@ function getStats(resp: any): ReactElement | Array<ReactElement> {
                 <br />
                 <br />
                 <StatValue>{value}</StatValue>
-            </StatBox> 
+            </StatBox>
         );
 
     });

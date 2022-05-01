@@ -2,11 +2,6 @@ import { ReactElement } from 'react';
 import useSWR from 'swr';
 import styled from 'styled-components';
 
-interface StatsArray {
-    label: string,
-    value: number
-}
-
 const StatContainer = styled.div`
     display: flex;
     margin-top: 50px;

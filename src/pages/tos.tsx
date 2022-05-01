@@ -31,7 +31,7 @@ const PermaLink = styled.a`
 `
 
 export default function TermsOfService() {
-    function getPermaLink(section: String): ReactElement {
+    function getPermaLink(section: string): ReactElement {
         return <PermaLink href={'#' + section}>¶</PermaLink>
     }
 

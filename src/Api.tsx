@@ -16,7 +16,7 @@ type UserData = {
     username: string,
     discriminator: string,
     avatar?: string,
-    bot: Boolean,
+    bot: boolean,
     mfa_enabled?: boolean,
     locale?: string,
     verified?: boolean,

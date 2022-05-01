@@ -36,7 +36,7 @@ const CommandContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: 80vw;
+    width: 70vw;
 `
 
 const Command = styled.div`
@@ -64,7 +64,7 @@ const CategoryContainer = styled.div`
     border-style: solid;
     border-width: 2px;
     border-radius: 8px;
-    width: 10vw;
+    width: 20vw;
     margin: 5px 0 5px 0;
     position: relative;
     left: 2vw;
